@@ -1,0 +1,49 @@
+<html ng-app>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    </head>
+<body ng-init="values={'data':[
+                      {'id':1,
+                        'name':'chandu',
+                         'a_b':1234,
+                         },
+                          
+                         {'id':2,
+                        'name':'ragu',
+                         'a_b':123456,
+                        },
+                   
+               {'id':3,
+                        'name':'raju',
+                         'a_b':12389,
+                         },
+                          
+                         {'id':4,
+                        'name':'ab',
+                         'a_b':14582,
+                        },
+               
+                      {'id':5,
+                        'name':'core',
+                         'a_b':1237,
+                         },
+                          
+                         {'id':6,
+                        'name':'mahe',
+                         'a_b':123456,
+                        }
+                      
+                      
+                          ]}">
+    
+    <span>search:<input ng-model="searchText"></span> <br/><br/>   
+    <table id="searchTextResults" style="border: 5px solid black;">
+            
+<tr><th>Id</th><th>Name</th><th> password</th></tr>
+        <tr ng-repeat='y in values.data|filter:searchText'>
+<td>{{y.id}}</td><td>{{y.name|uppercase}}</td><td>{{y.a_b}}</td></tr>
+    
+    </table>
+
+</body>
+</html>

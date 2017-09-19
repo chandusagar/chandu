@@ -1,0 +1,32 @@
+<html ng-app='myApp'>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+</head>
+<body>
+
+<a href="#!ah">search</a>
+
+
+<div>
+    <ng-view></ng-view>
+</div>
+</body>
+<script>
+    var app = angular.module('myApp',['ngRoute'])
+    app.service(function($routeProvider,$controller){
+        $routeProvider.when('/Ah',{temPlateUrl:'ah.html',$controller:'ah'});
+
+
+
+    });
+    app.controller('Ah',function(){
+        $scope.mse='demo html file';
+
+
+    });
+
+
+
+</script>
+</html>

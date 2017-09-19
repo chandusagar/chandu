@@ -1,0 +1,46 @@
+<html ng-app>
+  <head>
+    <title>My AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+  </head>
+  <body ng-init="values={'data':[
+                 {
+                 'id':1,
+                 'name':'sunil',
+                 'card_number':1034,                
+                 },
+                 {
+                 'id':3,
+                 'name':'anil',
+                 'card_number':0987,                
+                 },
+                 {
+                 'id':2,
+                 'name':'john',
+                 'card_number':0743,                
+                 },
+                 {
+                 'id':5,
+                 'name':'ram',
+                 'card_number':1276,                
+                 },
+                 {
+                 'id':4,
+                 'name':'laxman',
+                 'card_number':1123,                
+                 }
+                 ]}">
+
+      
+
+    
+<label>Search: <input ng-model="searchText"></label><br/><br/>
+<table id="searchTextResults" style="border:5px solid black;">
+
+    <tr><th>Id</th><th>Name</th><th>card numaber</th></tr>
+        <tr ng-repeat='y in values.data|filter:searchText'>
+<td>{{y.id}}</td><td>{{y.name}}</td><td>{{y.card_number}}</td></tr>
+    </table>
+
+      </body>
+</html>

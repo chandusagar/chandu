@@ -1,0 +1,26 @@
+<html ng-app="myapp">
+  <head>
+      <style>
+        input.ng-invalid{border:2px salid red;}
+      </style>
+    <title>My AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+      <script>
+      
+      
+      </script>
+  </head>
+    <body>
+        <div ng-controller="myctrl">
+        <form name="frm">
+        
+        <input type="email" ng-model="user.email" name="email"  required>
+     <span ng-show="">required!</span>
+        
+        <input type="button" value="ok" ng-click="send()"/>
+        
+        
+        </form>
+  </div>
+      </body>
+</html>

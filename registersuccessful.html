@@ -1,0 +1,48 @@
+<html ng-app="myApp">
+<head>
+</head>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js'>
+</script>
+<script>
+var app=angular.module("myApp",[]);
+
+app.controller("myCtrl",function($scope,$http){
+
+
+$scope.submit=function(){
+var email=$scope.email;
+var password=$scope.password;
+
+var url="https://reqres.in/api/register";
+
+var data={'email':'email','password':'password'};
+
+
+
+
+$http.post(url, data).then(function(response){
+
+//debugger;	
+
+$scope.data=response.data;
+console.log("somthing error");
+
+});
+
+}
+
+});
+
+
+</script>
+<body  ng-controller="myCtrl">
+
+email<input type="email" ng-model="email"/><br/></br>
+password<input type="password" ng-model="password"/><br/>
+<input type="button" ng-click="submit()" value="send"/><br/>	
+
+{{data.email}}
+{{data.password}}
+{{data.token}}
+</body>
+</html>
